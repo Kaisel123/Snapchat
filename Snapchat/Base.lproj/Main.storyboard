@@ -64,6 +64,13 @@
                                     <action selector="iniciarSesionTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OsH-ni-Bhq"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rhg-88-gVI">
+                                <rect key="frame" x="177.5" y="532" width="59" height="30"/>
+                                <state key="normal" title="Google+"/>
+                                <connections>
+                                    <action selector="loginGoogle:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CXM-0z-Zoo"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -72,6 +79,8 @@
                             <constraint firstItem="Jjj-iD-DPg" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="2vu-0r-4Ld"/>
                             <constraint firstItem="kKp-JK-QkR" firstAttribute="top" secondItem="kss-uK-M0P" secondAttribute="bottom" constant="30" id="4GG-Vz-ctP"/>
                             <constraint firstItem="Jjj-iD-DPg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8D4-vp-QZw"/>
+                            <constraint firstItem="rhg-88-gVI" firstAttribute="top" secondItem="kKp-JK-QkR" secondAttribute="bottom" constant="38" id="AJy-zO-qyh"/>
+                            <constraint firstItem="rhg-88-gVI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="BBV-js-wnO"/>
                             <constraint firstItem="97S-wW-Dsz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="C3K-vS-HV0"/>
                             <constraint firstItem="kKp-JK-QkR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ERj-SR-bmF"/>
                             <constraint firstItem="GXM-Vo-jXv" firstAttribute="top" secondItem="VAX-or-mmO" secondAttribute="bottom" constant="25" id="Swv-p7-MZg"/>
