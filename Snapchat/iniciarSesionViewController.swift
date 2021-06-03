@@ -5,9 +5,6 @@ import GoogleSignIn
 
 class iniciarSesionViewController: UIViewController, GIDSignInDelegate {
     
-    
-    
-
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
@@ -16,8 +13,18 @@ class iniciarSesionViewController: UIViewController, GIDSignInDelegate {
             
             if error != nil {
                 print("Se presento el siguiente error: \(error)")
+                Auth.auth().createUser(withEmail: self.emailTextField.text!, password: self.passwordTextField.text!, completion: { (user, error) in
+                    print("intentando crear un usuario")
+                    if error != nil {
+                        print("Se presento el siguiente error al crear el usuario: \(error)")
+                    } else {
+                        print("El usuario fue creado exitosamente")
+                        self.performSegue(withIdentifier: "iniciarsesionsegue", sender: nil)
+                    }
+                })
             } else {
                 print("Inicio de sesion exitoso!")
+                self.performSegue(withIdentifier: "iniciarsesionsegue", sender: nil)
             }
         }
     }
