@@ -128,7 +128,7 @@
             </objects>
             <point key="canvasLocation" x="1661" y="90"/>
         </scene>
-        <!--title-->
+        <!--Enviar Mensaje-->
         <scene sceneID="Yjg-QD-IBk">
             <objects>
                 <viewController id="1Sz-wA-qfW" customClass="ImagenViewController" customModule="Snapchat" customModuleProvider="target" sceneMemberID="viewController">
@@ -174,7 +174,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="JZ3-vZ-DZq"/>
                     </view>
-                    <navigationItem key="navigationItem" title="title" id="SW1-aC-wpp">
+                    <navigationItem key="navigationItem" title="Enviar Mensaje" id="SW1-aC-wpp">
                         <barButtonItem key="rightBarButtonItem" systemItem="camera" id="XFm-EH-hT2">
                             <connections>
                                 <action selector="camaraTapped:" destination="1Sz-wA-qfW" id="CoL-wA-OKZ"/>
@@ -192,7 +192,7 @@
             </objects>
             <point key="canvasLocation" x="2462.3188405797105" y="86.383928571428569"/>
         </scene>
-        <!--Elegir Usuario View Controller-->
+        <!--Lista de Usuarios-->
         <scene sceneID="DAn-Fv-dHT">
             <objects>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" id="6Kc-tE-WYe" customClass="ElegirUsuarioViewController" customModule="Snapchat" customModuleProvider="target" sceneMemberID="viewController">
@@ -214,7 +214,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="rX1-bk-jJt"/>
                     </view>
-                    <navigationItem key="navigationItem" id="bA4-w2-hdh"/>
+                    <navigationItem key="navigationItem" title="Lista de Usuarios" id="bA4-w2-hdh"/>
                     <connections>
                         <outlet property="listaUsuarios" destination="MU1-0T-k26" id="0yi-fl-BhA"/>
                     </connections>
