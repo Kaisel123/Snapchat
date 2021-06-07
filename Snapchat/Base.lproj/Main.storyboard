@@ -185,11 +185,43 @@
                         <outlet property="descripcionTextField" destination="WBf-KQ-OqQ" id="QAE-JD-QFC"/>
                         <outlet property="elegirContactoBoton" destination="BVY-im-pI1" id="cAU-tw-NwA"/>
                         <outlet property="imageView" destination="x0w-hA-xO2" id="snj-JD-d36"/>
+                        <segue destination="6Kc-tE-WYe" kind="show" identifier="seleccionarContactoSegue" id="zbC-Ax-oQ1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wqU-cV-eHT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2462.3188405797105" y="86.383928571428569"/>
+        </scene>
+        <!--Elegir Usuario View Controller-->
+        <scene sceneID="DAn-Fv-dHT">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="6Kc-tE-WYe" customClass="ElegirUsuarioViewController" customModule="Snapchat" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uZg-4Z-C8U">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MU1-0T-k26">
+                                <rect key="frame" x="0.0" y="56" width="414" height="752"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="MU1-0T-k26" firstAttribute="leading" secondItem="rX1-bk-jJt" secondAttribute="leading" id="UVa-8g-J39"/>
+                            <constraint firstItem="rX1-bk-jJt" firstAttribute="trailing" secondItem="MU1-0T-k26" secondAttribute="trailing" id="XYm-IV-09K"/>
+                            <constraint firstItem="MU1-0T-k26" firstAttribute="top" secondItem="rX1-bk-jJt" secondAttribute="top" id="ZjR-I3-bLZ"/>
+                            <constraint firstItem="rX1-bk-jJt" firstAttribute="bottom" secondItem="MU1-0T-k26" secondAttribute="bottom" id="a7D-4z-bKy"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="rX1-bk-jJt"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="bA4-w2-hdh"/>
+                    <connections>
+                        <outlet property="listaUsuarios" destination="MU1-0T-k26" id="0yi-fl-BhA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VE7-xv-jqN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3285" y="87"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="bRe-hb-E24">
