@@ -13,21 +13,21 @@ class iniciarSesionViewController: UIViewController, GIDSignInDelegate {
             
             if error != nil {
                 print("Se presento el siguiente error: \(error)")
-                Auth.auth().createUser(withEmail: self.emailTextField.text!, password: self.passwordTextField.text!, completion: { (user, error) in
-                    print("intentando crear un usuario")
-                    if error != nil {
-                        print("Se presento el siguiente error al crear el usuario: \(error)")
-                    } else {
-                        print("El usuario fue creado exitosamente")
-                    Database.database().reference().child("usuarios").child(user!.user.uid).child("email").setValue(user!.user.email)
-                        let alerta = UIAlertController(title: "Creacion de usuario", message: "Usuario: \(self.emailTextField.text!) se creo correctamente!.", preferredStyle: .alert)
-                        let btnOK = UIAlertAction(title: "Aceptar", style: .default, handler: { (UIAlertAction) in	
-                            self.performSegue(withIdentifier: "iniciarsesionsegue", sender: nil)
-                        })
-                        alerta.addAction(btnOK)
-                        self.present(alerta, animated: true, completion: nil)
-                    }
+                
+                /* NUEVO CODIGO */
+                let alerta = UIAlertController(title: "Error de Acceso", message: "El usuario ingresado no existe, desea registrarse?", preferredStyle: .alert)
+                
+                let btnOK = UIAlertAction(title: "Aceptar", style: .default, handler: { (UIAlertAction) in
+                    /*print("se ha iniciado la vista registro")*/
+                    self.performSegue(withIdentifier: "registroUsuarioSegue", sender: nil)
                 })
+                
+                let btnCANCEL = UIAlertAction(title: "Cancelar", style: .default)
+                
+                alerta.addAction(btnCANCEL)
+                alerta.addAction(btnOK)
+                self.present(alerta, animated: true, completion: nil)
+                
             } else {
                 print("Inicio de sesion exitoso!")
                 self.performSegue(withIdentifier: "iniciarsesionsegue", sender: nil)
@@ -35,11 +35,14 @@ class iniciarSesionViewController: UIViewController, GIDSignInDelegate {
         }
     }
     
+    @IBAction func crearUsuarioTapped(_ sender: Any) {
+        self.performSegue(withIdentifier: "registroUsuarioSegue", sender: nil)
+    }
+    
     @IBAction func loginGoogle(_ sender: Any) {
         GIDSignIn.sharedInstance()?.signOut()
         GIDSignIn.sharedInstance()?.signIn()
     }
-    
     
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         if error == nil && user.authentication != nil {
