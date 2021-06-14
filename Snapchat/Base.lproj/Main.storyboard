@@ -241,14 +241,66 @@
             </objects>
             <point key="canvasLocation" x="514" y="853"/>
         </scene>
+        <!--Ver Snap View Controller-->
+        <scene sceneID="TDf-Wl-fh1">
+            <objects>
+                <viewController id="bDg-l5-Rnd" customClass="VerSnapViewController" customModule="Snapchat" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tb6-7n-4ED">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mensaje:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yO7-7p-LFh">
+                                <rect key="frame" x="20" y="80" width="374" height="23"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Imagen Enviada:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KET-y9-e1s">
+                                <rect key="frame" x="20" y="134" width="150" height="23"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oG4-yy-1V6">
+                                <rect key="frame" x="20" y="194" width="374" height="327"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="uld-HT-bG3"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="h2Q-vT-0Gf"/>
+                    <connections>
+                        <outlet property="imageView" destination="oG4-yy-1V6" id="qAl-Wo-T4u"/>
+                        <outlet property="lblMensaje" destination="yO7-7p-LFh" id="Her-Ah-fK4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eMb-jG-EoO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1660.8695652173915" y="805.58035714285711"/>
+        </scene>
         <!--Snaps View Controller-->
         <scene sceneID="7zn-In-jm4">
             <objects>
-                <viewController id="x4e-59-UmK" customClass="SnapsViewController" customModule="Snapchat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="x4e-59-UmK" customClass="SnapsViewController" customModule="Snapchat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="le2-0h-CP5">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="re0-9w-oKv">
+                                <rect key="frame" x="0.0" y="56" width="414" height="752"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="re0-9w-oKv" firstAttribute="leading" secondItem="lJb-EJ-oQX" secondAttribute="leading" id="E0K-r1-AOS"/>
+                            <constraint firstItem="lJb-EJ-oQX" firstAttribute="bottom" secondItem="re0-9w-oKv" secondAttribute="bottom" id="HiT-rA-UEd"/>
+                            <constraint firstItem="lJb-EJ-oQX" firstAttribute="trailing" secondItem="re0-9w-oKv" secondAttribute="trailing" id="TC3-QQ-RD2"/>
+                            <constraint firstItem="re0-9w-oKv" firstAttribute="top" secondItem="lJb-EJ-oQX" secondAttribute="top" id="ec5-l5-UXv"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="lJb-EJ-oQX"/>
                     </view>
                     <navigationItem key="navigationItem" id="9ci-3x-7gu">
@@ -263,6 +315,10 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tablaSnaps" destination="re0-9w-oKv" id="xVa-Rb-O53"/>
+                        <segue destination="bDg-l5-Rnd" kind="show" identifier="versnapsegue" id="pJt-ed-jox"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Gx-8p-QBN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
