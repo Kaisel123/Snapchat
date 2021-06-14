@@ -355,6 +355,9 @@
                                 <state key="normal" title="Grabar audio">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="grabarTapped:" destination="1Sz-wA-qfW" eventType="touchUpInside" id="LIn-S4-EIB"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="98X-vN-aXU">
                                 <rect key="frame" x="87" y="341" width="240" height="34"/>
@@ -414,7 +417,10 @@
                     <connections>
                         <outlet property="descripcionTextField" destination="WBf-KQ-OqQ" id="QAE-JD-QFC"/>
                         <outlet property="elegirContactoBoton" destination="BVY-im-pI1" id="cAU-tw-NwA"/>
+                        <outlet property="grabarBoton" destination="YZg-0g-dGJ" id="xbm-1l-Cmw"/>
                         <outlet property="imageView" destination="x0w-hA-xO2" id="snj-JD-d36"/>
+                        <outlet property="reproducirBoton" destination="98X-vN-aXU" id="nQx-QP-1W0"/>
+                        <outlet property="temporizador" destination="yW0-Nx-ezm" id="q3o-sy-gga"/>
                         <segue destination="6Kc-tE-WYe" kind="show" identifier="seleccionarContactoSegue" id="zbC-Ax-oQ1"/>
                     </connections>
                 </viewController>

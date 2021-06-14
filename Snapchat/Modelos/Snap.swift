@@ -6,5 +6,7 @@ class Snap {
     var from = ""
     var id = ""
     var imagenID = ""
+    var grabacionURL = ""
+    var grabacionID = ""
 }
 	
