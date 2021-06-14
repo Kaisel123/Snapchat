@@ -16,6 +16,8 @@ class ElegirUsuarioViewController: UIViewController,UITableViewDataSource, UITab
     var imagenURL = ""
     var descrip = ""
     var imagenID = ""
+    var audioID = ""
+    var audioURL = ""
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return usuarios.count
@@ -47,7 +49,7 @@ class ElegirUsuarioViewController: UIViewController,UITableViewDataSource, UITab
         let usuario = usuarios[indexPath.row]
         let snap = ["from": Auth.auth().currentUser?.email, "descripcion": descrip, "imagenURL": imagenURL, "imagenID": imagenID]
         Database.database().reference().child("usuarios").child(usuario.uid).child("snaps").childByAutoId().setValue(snap)
-        print("presiono un objeto")
+            print("presiono un objeto")
         navigationController?.popViewController(animated: true)
     }
 }

@@ -1,5 +1,6 @@
 import UIKit
 import Firebase
+import AVFoundation
 
 class ImagenViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
 

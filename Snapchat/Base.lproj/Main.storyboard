@@ -345,9 +345,37 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BVY-im-pI1">
-                                <rect key="frame" x="87" y="273" width="240" height="34"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YZg-0g-dGJ">
+                                <rect key="frame" x="87" y="286" width="240" height="34"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="5Xi-4o-uyA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <state key="normal" title="Grabar audio">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="98X-vN-aXU">
+                                <rect key="frame" x="87" y="341" width="240" height="34"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="KqS-wq-Sux"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <state key="normal" title="Reproducir audio">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yW0-Nx-ezm">
+                                <rect key="frame" x="171" y="399" width="72" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BVY-im-pI1">
+                                <rect key="frame" x="87" y="448" width="240" height="34"/>
+                                <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <state key="normal" title="Elegir Contacto">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -359,11 +387,17 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="YZg-0g-dGJ" firstAttribute="centerX" secondItem="p3L-a1-cTl" secondAttribute="centerX" id="4Ir-AO-o58"/>
                             <constraint firstItem="WBf-KQ-OqQ" firstAttribute="width" secondItem="BVY-im-pI1" secondAttribute="width" multiplier="2.26415" constant="-303.39622641509436" id="Kn5-Fh-TYb"/>
-                            <constraint firstItem="BVY-im-pI1" firstAttribute="top" secondItem="WBf-KQ-OqQ" secondAttribute="bottom" constant="20" id="LMp-Qk-XTs"/>
                             <constraint firstItem="WBf-KQ-OqQ" firstAttribute="centerX" secondItem="p3L-a1-cTl" secondAttribute="centerX" id="LTq-92-Fsy"/>
+                            <constraint firstItem="yW0-Nx-ezm" firstAttribute="top" secondItem="98X-vN-aXU" secondAttribute="bottom" constant="24" id="MNy-z3-23N"/>
+                            <constraint firstItem="YZg-0g-dGJ" firstAttribute="top" secondItem="WBf-KQ-OqQ" secondAttribute="bottom" constant="33" id="aY6-Tl-EpF"/>
                             <constraint firstItem="x0w-hA-xO2" firstAttribute="centerX" secondItem="p3L-a1-cTl" secondAttribute="centerX" id="dfM-GT-lEg"/>
+                            <constraint firstItem="BVY-im-pI1" firstAttribute="top" secondItem="yW0-Nx-ezm" secondAttribute="bottom" constant="28" id="eQq-25-L5S"/>
                             <constraint firstItem="WBf-KQ-OqQ" firstAttribute="top" secondItem="x0w-hA-xO2" secondAttribute="bottom" constant="15" id="giM-vb-8dc"/>
+                            <constraint firstItem="98X-vN-aXU" firstAttribute="top" secondItem="YZg-0g-dGJ" secondAttribute="bottom" constant="21" id="i3w-xx-jnp"/>
+                            <constraint firstItem="yW0-Nx-ezm" firstAttribute="centerX" secondItem="p3L-a1-cTl" secondAttribute="centerX" id="jXx-7C-T6D"/>
+                            <constraint firstItem="98X-vN-aXU" firstAttribute="centerX" secondItem="p3L-a1-cTl" secondAttribute="centerX" id="o9F-Ux-kAJ"/>
                             <constraint firstItem="x0w-hA-xO2" firstAttribute="top" secondItem="JZ3-vZ-DZq" secondAttribute="top" constant="20" id="oBy-5f-dng"/>
                             <constraint firstItem="BVY-im-pI1" firstAttribute="centerX" secondItem="p3L-a1-cTl" secondAttribute="centerX" id="rVq-UR-HG7"/>
                             <constraint firstItem="x0w-hA-xO2" firstAttribute="width" secondItem="WBf-KQ-OqQ" secondAttribute="width" multiplier="7.5" constant="-1560" id="yPc-dg-Fl2"/>
