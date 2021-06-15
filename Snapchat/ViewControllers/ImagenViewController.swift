@@ -98,6 +98,15 @@ class ImagenViewController: UIViewController,UIImagePickerControllerDelegate,UIN
         siguienteVC.imagenURL = sender as! String
         siguienteVC.descrip = descripcionTextField.text!
         siguienteVC.imagenID = imagenID
+        siguienteVC.audioID =
+    }
+    
+    @IBAction func btnReproduccionTapped(_ sender: Any) {
+        do{
+            try reproducirAudio = AVAudioPlayer(contentsOf: audioURL!)
+            reproducirAudio!.play()
+            print("Reproduciendo audio")
+        }catch {}
     }
     
     func mostrarAlerta(titulo: String, mensaje:String, accion:String) {

@@ -369,6 +369,9 @@
                                 <state key="normal" title="Reproducir audio">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="btnReproduccionTapped:" destination="1Sz-wA-qfW" eventType="touchUpInside" id="jlf-Ff-fmc"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yW0-Nx-ezm">
                                 <rect key="frame" x="171" y="399" width="72" height="21"/>
