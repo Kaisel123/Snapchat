@@ -31,6 +31,10 @@ class ImagenViewController: UIViewController,UIImagePickerControllerDelegate,UIN
     @IBAction func elegirContactoTapped(_ sender: Any) {
         self.elegirContactoBoton.isEnabled = false
         
+        if descripcionTextField.text! == "" {
+            self.mostrarAlerta(titulo: "Descripcion Vacia", mensaje: "Por favor ingrese alguna descripcion a la imagen", accion: "Aceptar")
+        }else{
+        
         let imagenesFolder = Storage.storage().reference().child("imagenes")
         let audiosFolder = Storage.storage().reference().child("audios")
         let imagenData = imageView.image?.jpegData(compressionQuality: 0.50)
@@ -61,8 +65,21 @@ class ImagenViewController: UIViewController,UIImagePickerControllerDelegate,UIN
                         print("Ocurrio un error alobtener informacion de imagen (error)")
                         return
                     }
-                    self.performSegue(withIdentifier: "seleccionarContactoSegue", sender: url?.absoluteString)
+                    
+                    let urlImg = url?.absoluteString
+                    
+                    cargarAudio.downloadURL(completion: {(url, error) in
+                    guard let enlaceURL = url else{
+                        self.mostrarAlerta(titulo: "Error", mensaje: "Se produjo un error al obtener información de imagen.", accion: "Cancelar")
+                        self.elegirContactoBoton.isEnabled = true
+                        print("Ocurrio un error alobtener informacion de imagen (error)")
+                        return
+                        }
+                        self.performSegue(withIdentifier: "seleccionarContactoSegue", sender: [urlImg,url?.absoluteString])
+                    })
                 })
+                }
+                
             }
         }
         
@@ -95,10 +112,12 @@ class ImagenViewController: UIViewController,UIImagePickerControllerDelegate,UIN
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let siguienteVC = segue.destination as! ElegirUsuarioViewController
-        siguienteVC.imagenURL = sender as! String
+        let urls = sender as! [String]
+        siguienteVC.imagenURL = urls[0]
         siguienteVC.descrip = descripcionTextField.text!
         siguienteVC.imagenID = imagenID
-        siguienteVC.audioID =
+        siguienteVC.audioID = audioID
+        siguienteVC.audioURL = urls[1]
     }
     
     @IBAction func btnReproduccionTapped(_ sender: Any) {
@@ -115,7 +134,7 @@ class ImagenViewController: UIViewController,UIImagePickerControllerDelegate,UIN
         alerta.addAction(btnCANCELOK)
         present(alerta, animated: true, completion: nil)
     }
-    
+    	
     override func viewDidLoad() {
         super.viewDidLoad()
         configurarGrabacion()
